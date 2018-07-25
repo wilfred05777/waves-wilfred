@@ -16,6 +16,10 @@ import ManageCategories from './components/User/Admin/manage_categories';
 import UserCart from './components/User/cart';
 import UpdateProfile from './components/User/update_profile';
 import ManageSite from './components/User/Admin/manage_site';
+import AddFile from './components/User/Admin/add_file';
+
+import PageNotFound from './components/utils/page_not_found';
+
 
 const Routes = () => {
   return(
@@ -27,6 +31,7 @@ const Routes = () => {
         <Route path="/admin/add_product" exact component={Auth(AddProduct,true)}/>
         <Route path="/admin/manage_categories" exact component={Auth(ManageCategories,true)}/>
         <Route path="/admin/site_info" exact component={Auth(ManageSite,true)}/>
+        <Route path="/admin/add_file" exact component={Auth(AddFile,true)}/>
 
 
         <Route path="/product_detail/:id" exact component={Auth(ProductPage,null)}/>
@@ -34,6 +39,8 @@ const Routes = () => {
         <Route path="/register_login" exact component={Auth(RegisterLogin,false)}/>
         <Route path="/shop" exact component={Auth(Shop,null)}/>
         <Route path="/" exact component={Auth(Home,null)}/>
+        <Route component={Auth(PageNotFound)}/>
+
       </Switch>
     </Layout>
 
